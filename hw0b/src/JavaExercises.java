@@ -6,6 +6,12 @@ public class JavaExercises {
     /** Returns an array [1, 2, 3, 4, 5, 6] */
     public static int[] makeDice() {
         // TODO: Fill in this function.
+        int[] array = new int[6];
+        for (int i = 0; i < 6; i++)
+        {
+            array[i] = i + 1;
+        }
+        return array;
         return null;
     }
 
@@ -15,6 +21,16 @@ public class JavaExercises {
      *  In any other case, return an empty String[] of size 3. */
     public static String[] takeOrder(String customer) {
         // TODO: Fill in this function.
+        if ( customer.equals("Ergun")){
+            return ["beyti", "pizza", "hamburger", "tea"];
+        }
+        else if (customer.equals.("Erik")){
+            return ["sushi", "pasta", "avocado", "coffee"];
+        }
+        else{
+            String[] empty = new String[3];
+            return empty;
+        }
         return null;
     }
 
@@ -22,6 +38,18 @@ public class JavaExercises {
      *  Assumes array is nonempty. */
     public static int findMinMax(int[] array) {
         // TODO: Fill in this function.
+
+        int min = array[0];
+        int max = array[0];
+        for (int num : array){
+            if (num < min){
+                min = num;
+            }
+            if (num > max){
+                max = num;
+            }
+        }
+        return max - min;
         return 0;
     }
 
@@ -39,6 +67,19 @@ public class JavaExercises {
 
     private static List<Integer> hailstoneHelper(int x, List<Integer> list) {
         // TODO: Fill in this function.
+        list.add(x);
+        if (list.get(list.size() - 1) == 1){
+            return list;
+        }
+        if ( list.get(list.size() - 1) % 2 == 0){
+            int res = list.get(list.size() - 1) / 2;
+            return hailstoneHelper(res , list);
+        }
+        else{
+            res = list.get(list.size() - 1) * 3 + 1;
+            return hailstoneHelper(res , list);
+        }
+
         return null;
     }
 
